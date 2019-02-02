@@ -1,4 +1,9 @@
 
+sudo: false
+
+language:
+    - python
+
 before_install:
     - pwd
     - which python
@@ -24,3 +29,7 @@ matrix:
     - os: osx
       osx_image: xcode10.1
     - os: linux
+    
+ 
+notifications:
+    email: false
