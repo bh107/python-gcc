@@ -160,7 +160,7 @@ class taged_bdist_wheel(bdist_wheel):
 setup(
     cmdclass={'bdist_wheel': taged_bdist_wheel},
     name='gcc7',
-    version="0.0.7",
+    version="0.0.8",
     description='GCC v7 binaries',
     long_description=long_description,
 
