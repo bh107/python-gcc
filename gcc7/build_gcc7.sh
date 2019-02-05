@@ -1,12 +1,10 @@
 #!/bin/bash
-# Use this script on a MAC OSX platform with homebrew installed.
-
 set -e
 set -x
 
 # Install gcc7 (/opt/gcc7)
-tar -xf deps/gcc-7.3.0.tar.xz
-mv gcc-7.3.0 ~/gcc_src
+tar -xf deps/gcc-7.4.0.tar.xz
+mv gcc-7.4.0 ~/gcc_src
 mv deps/* ~/gcc_src/
 cd ~/gcc_src
 ./contrib/download_prerequisites --no-graphite
@@ -21,7 +19,7 @@ cd ~/gcc7_install/
 #find . -name "*.a" -type f|xargs rm -f
 
 # Stripping unneeded data in the binaries
-find ./libexec/gcc/x86_64-pc-linux-gnu/7.3.0 -maxdepth 1 -type f -size +10M -print0 | xargs -0 \
+find ./libexec/gcc/x86_64-pc-linux-gnu/7.4.0 -maxdepth 1 -type f -size +10M -print0 | xargs -0 \
     strip --strip-unneeded --remove-section=.comment --remove-section=.note
 
 ls -Rlh

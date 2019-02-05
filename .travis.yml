@@ -6,14 +6,10 @@ install:
     - travis_wait 40 bash gcc7/build_gcc7.sh
 
 script:
-    - virtualenv vr
-    - source vr/bin/activate
-    - pip install twine
-    - cd gcc7 && python setup.py --gcc-install-prefix ~/gcc7_install/ bdist_wheel
-    - ls dist/*
-    - python -m twine upload dist/*
+    - bash build.sh
 
 matrix:
   include:
     - os: osx
+      osx_image: xcode10
     - os: linux
